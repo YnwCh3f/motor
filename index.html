@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Választott-Téma</title>
+    <style>
+
+        body{
+            background-color: aquamarine;
+        }
+
+        #container{
+            display: flex;
+            flex-direction: column;
+            width: 95%;
+            margin: 0px auto;
+        }
+        
+        .hirek{
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+        }
+
+        .hir{
+            height: 40%;
+            width: 100%;
+        }
+        #kepek{
+            display: none;
+        }
+        .racs{
+            display: grid;
+            grid-template-columns: repeat(2, 49%);
+            grid-template-rows: repeat(3, 32%);
+            gap: 10px;
+            height: 100%;
+            width: 100%;
+        }
+        .elem{
+            width: 100%;
+            height: 100%;
+        }
+        .feher{
+            background-color: white;
+            border: solid 1px lightgrey;
+            padding: 0px 5px 5px 5px;
+            margin-bottom: 10px;
+        }
+        h2{
+            margin: 5px;
+        }
+
+        @media (min-width: 700px){
+            #container{
+                flex-direction: row;
+            }
+
+            #legujabb{
+                margin-right: 10px;
+            }
+        }
+
+        @media (min-width: 1400px){
+            #kepek{
+                display: flex;
+                flex-direction: column;
+            }
+            .feher{
+                width: 33%;
+            }
+        }
+    </style>
+
+    <script>
+
+        //let timer = setInterval(showPx);
+
+        function showPx(){
+            document.querySelector("title").innerHTML = "Választott-Téma (" + document.querySelector("html").clientWidth + " px)";
+        }
+
+
+    </script>
+</head>
+<body onload="showPx();" onresize="showPx();">
+    <div id="container">
+        <div class="hirek feher" id="legujabb">
+            <h2>Legújabb hírek</h2>
+            <img class="hir" src="1.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat minima numquam praesentium officia, soluta corporis, necessitatibus, magni dolore dolorum saepe animi quo odit molestias velit fugit neque a ab nostrum.</p>
+            <img class="hir" src="2.jpg">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, voluptates! Officiis neque adipisci sint molestias accusamus? Consequatur corrupti tempora aspernatur dolor totam veritatis esse maiores, vitae earum nostrum mollitia ipsa!</p>
+        </div>
+        <div class="hirek feher" id="tovabbi">
+            <h2>További hírek</h2>
+            <img class="hir" src="3.jpg">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit molestiae dolorem non? Cumque, molestias aperiam ut optio mollitia incidunt quod culpa illo ullam earum ab praesentium repudiandae maxime nam natus!</p>
+            <img class="hir" src="4.jpg">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt sed suscipit laborum est expedita blanditiis, ea qui sit sint, laboriosam non neque ut voluptatem, saepe corporis. Labore ducimus itaque possimus.</p>
+        </div>
+        <div class="feher" id="kepek">
+            <h2>Képek</h2>
+            <div class="racs">
+                    <img class="elem" src="11.png">
+                    <img class="elem" src="22.png">
+                    <img class="elem" src="33.png">
+                    <img class="elem" src="44.png">
+                    <img class="elem" src="55.png">
+                    <img class="elem" src="66.png">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
